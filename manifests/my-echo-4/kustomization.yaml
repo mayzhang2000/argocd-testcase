@@ -1,0 +1,16 @@
+resources:
+  - echo.yaml
+  - rbac.yaml
+configMapGenerator:
+  - name: echo
+    files:
+      - resources/echo.txt
+secretGenerator:
+  - name: echo
+    files:
+      - foo=secrets/foo
+generatorOptions:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
+namespace: my-echo-4

@@ -1,0 +1,9 @@
+resources:
+  - my-argocd.yaml
+  - my-echo-0.yaml
+  - my-echo-1.yaml
+  - my-echo-2.yaml
+  - my-echo-3.yaml
+  - my-echo-4.yaml
+  - my-echo-5.yaml
+  - my-echo-6.yaml

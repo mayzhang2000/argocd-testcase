@@ -1,0 +1,13 @@
+bases:
+  - github.com/argoproj/argo-cd//manifests/base?ref=v1.5.4
+resources:
+  - applications
+  - rbac.yaml
+  - secrets/in-cluster.yaml
+patchesStrategicMerge:
+  - argocd-patch.yaml
+generatorOptions:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
+namespace: my-argocd

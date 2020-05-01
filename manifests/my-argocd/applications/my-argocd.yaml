@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-argocd
+spec:
+  destination:
+    namespace: my-argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: manifests/my-argocd
+    repoURL: https://github.com/ribbybibby/argocd-testcase.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

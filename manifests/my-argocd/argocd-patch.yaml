@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-application-controller
+spec:
+  template:
+    spec:
+      containers:
+        - name: argocd-application-controller
+          args:
+            # sync more quickly for the purposes of demonstration
+            - --app-resync=60
+            - --loglevel=debug

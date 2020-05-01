@@ -1,0 +1,10 @@
+resources:
+  - kube-system
+  - my-echo-0
+  - my-echo-1
+  - my-echo-2
+  - my-echo-3
+  - my-echo-4
+  - my-echo-5
+  - my-echo-6
+  - my-argocd

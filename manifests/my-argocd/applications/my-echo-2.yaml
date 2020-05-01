@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-echo-2
+spec:
+  destination:
+    namespace: my-echo-2
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: manifests/my-echo-2
+    repoURL: https://github.com/ribbybibby/argocd-testcase.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

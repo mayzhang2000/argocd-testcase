@@ -1,0 +1,11 @@
+bases:
+  - github.com/argoproj/argo-cd//manifests/crds?ref=v1.5.4
+#   - github.com/argoproj/argo-cd//manifests/cluster-rbac?ref=v1.5.2
+resources:
+  - 00-namespaces.yaml
+  - crds.yaml
+generatorOptions:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
+namespace: kube-system
