@@ -1,5 +1,5 @@
 bases:
-  - github.com/argoproj/argo-cd//manifests/base?ref=v1.5.4
+  - github.com/argoproj/argo-cd//manifests/base?ref=v1.7.0-rc1
 resources:
   - applications
   - rbac.yaml
